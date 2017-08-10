@@ -36,8 +36,8 @@ after_success:
   - codecov
 # command to run tests
 script: 
-  - nosetests --cover-erase --cover-xml --with-coverage --cover-inclusive --cover-package=kid_readout --exclude=".*equipment.*" --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_kid_readout_6f3f00349b_3
-  - python -m properform Push 47.88.50.110:15554 asdf_kid_readout_6f3f00349b_3 ./profile_kid_readout_6f3f00349b_3
+  - nosetests --cover-erase --cover-xml --with-coverage --cover-inclusive --cover-package=kid_readout --exclude=".*equipment.*" --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_kid_readout_6f3f00349b_4
+  - python -m properform Push 47.88.50.110:15554 asdf_kid_readout_6f3f00349b_4 ./profile_kid_readout_6f3f00349b_4
 
 
-#2017-08-10 10:42:32 modified at 0#2017-08-10 10:42:38 modified at 1#2017-08-10 10:42:44 modified at 2#2017-08-10 10:42:50 modified at 3
+#2017-08-10 10:42:32 modified at 0#2017-08-10 10:42:38 modified at 1#2017-08-10 10:42:44 modified at 2#2017-08-10 10:42:50 modified at 3#2017-08-10 10:42:56 modified at 4
