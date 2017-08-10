@@ -33,7 +33,7 @@ install:
 
 # command to run tests
 script: 
-  - nosetests --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_kid_readout_6f1a7ce588_0
-  - python -m properform Push 47.88.50.110:15554 asdf_kid_readout_6f1a7ce588_0 ./profile_kid_readout_6f1a7ce588_0
+  - nosetests --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_kid_readout_6f1a7ce588_1
+  - python -m properform Push 47.88.50.110:15554 asdf_kid_readout_6f1a7ce588_1 ./profile_kid_readout_6f1a7ce588_1
 
-#2017-08-10 12:04:04 modified at 0
+#2017-08-10 12:04:04 modified at 0#2017-08-10 12:04:11 modified at 1
